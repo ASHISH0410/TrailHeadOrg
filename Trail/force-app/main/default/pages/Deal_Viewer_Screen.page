@@ -1,0 +1,65 @@
+<apex:page standardController="contact"  extensions="DealViewer">
+<apex:outputLabel >Deal Viewer</apex:outputLabel><br/>
+ <b>{!fullname}</b>
+ <br/><br/>
+ <apex:form >
+ <apex:pageBlock >
+ 
+ <apex:pageBlockSection collapsible="false" title="Total Deal Summary" id="myblock">
+ <apex:outputtext value="{!contact.Acceptance_Rate__c}"/>
+  <apex:outputText value="{!contact.Deals_Accepted__c}"/>
+   <apex:outputtext value="{!contact.Deals_Rejected__c}"/>
+ </apex:pageBlockSection>
+ <apex:pageBlockSection collapsible="false" title="Deals">
+ 
+<apex:pageBlockTable value="{!mydata}" var="d">
+
+<apex:column headerValue="Action">
+         <apex:commandlink action="{!accept}"  >
+              <apex:commandButton value="Accept" reRender="myblock" disabled="{!not(d.buttonstatus)}" />
+                          <apex:param name="did" value="{!d.de.id}"/>
+         </apex:commandlink>
+          <apex:commandlink action="{!reject}">
+         <apex:commandButton value="Reject" reRender="myblock" disabled="{!not(d.buttonstatus)}"   />
+         <apex:param name="did" value="{!d.de.id}"/>
+         </apex:commandlink>
+             
+</apex:column>
+
+<apex:column headerValue="Status" value="{!d.status}" />
+<apex:column headerValue="Icon">
+<apex:image url="{!d.imageurl}" width="50" height="50"  rendered="{!d.v}" />
+<apex:image url="{!URLFOR($Resource.Asset,'Images/GenericFish.jpg')}" width="50" height="50" rendered="{!not(d.v)}" />
+</apex:column>
+<apex:column headerValue="Deal Name" value="{!d.de.name}"/>
+<apex:column headerValue="Valid Through" value="{!d.de.Valid_Through__c}"/>
+<apex:column headerValue="Available Deals" value="{!d.de.Available_Deals__c}"/>
+
+</apex:pageBlockTable> 
+ </apex:pageBlockSection>
+
+ <apex:pageBlockButtons >
+ <apex:commandButton value="Done" action="{!done}"/>
+ </apex:pageBlockButtons>
+ 
+
+ <apex:commandButton action="{!first}" value="|<(First)"  disabled="{!disablePrevious}" />
+<apex:commandButton action="{!Previous}" value="<(Previous)" disabled="{!disablePrevious}"   />
+<apex:outputLabel > Page  {!pageNumber} of {!totalPages}</apex:outputLabel>
+<apex:commandButton action="{!next}" value=">(Next)"   disabled="{!disableNext}" />
+<apex:commandButton action="{!last}" value=">|(Last)" disabled="{!disableNext}"   />
+<!--
+<apex:pageBlockTable value="{!attach}" var="a">
+<apex:column value="{!a}"/>
+
+</apex:pageBlockTable>
+-->
+ </apex:pageBlock>
+ 
+ 
+ 
+ 
+
+ </apex:form>
+  
+</apex:page>

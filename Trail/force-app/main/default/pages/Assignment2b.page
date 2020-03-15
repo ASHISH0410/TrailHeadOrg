@@ -1,0 +1,3 @@
+<apex:page showHeader="false">
+<apex:image url="{!$Resource.content}" width="300" height="300"/>
+</apex:page>

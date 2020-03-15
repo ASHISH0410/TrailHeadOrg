@@ -1,0 +1,23 @@
+<apex:page standardController="Employee__c"  recordSetVar="emp"  extensions="myfinalcontroller">
+<apex:form >
+<apex:pageBlock title="Employees">
+
+<apex:pageBlockTable value="{!emp}" var="emp1">
+    <apex:column headerValue="Employee name Name">
+         <apex:commandLink action="{!sendtocode}" >
+                       {!emp1.FirstName__c}
+                         <apex:param name="id" value="{!emp1.id}" />
+             </apex:commandLink>
+         </apex:column>
+         
+<apex:column value="{!emp1.LastName__c}"/>
+</apex:pageBlockTable>
+</apex:pageBlock>
+</apex:form>
+
+<apex:pageBlock >
+
+<!--<apex:detail subject="{!$CurrentPage.parameters.cid}"/>-->
+</apex:pageBlock>
+
+</apex:page>

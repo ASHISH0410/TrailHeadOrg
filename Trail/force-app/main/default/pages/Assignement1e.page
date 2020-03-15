@@ -1,0 +1,18 @@
+<apex:page standardController="Account">
+<!--0017F00000PTxdI-->
+Your Viewing All Contact Details of the Account {!account.name} <br/>
+    <apex:pageBlock title="Contacts of {!account.name}">
+
+        <apex:dataTable value="{!account.Contacts}" var="contact" cellPadding="4" border="1">
+
+           <apex:column >
+       <apex:facet name="header">Name</apex:facet>
+                        {!contact.name}
+            </apex:column>
+      <apex:column >
+       <apex:facet name="header">Email</apex:facet>
+                        {!contact.email}
+            </apex:column>
+        </apex:dataTable>
+    </apex:pageBlock>
+</apex:page>

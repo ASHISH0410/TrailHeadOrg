@@ -1,0 +1,53 @@
+<apex:page docType="html-5.0"  Controller="ProjectController">
+<apex:form >
+<apex:input type="date" value="{!mydate}" />
+<apex:commandButton value="search" action="{!search}"  />
+
+<apex:pageBlock title="Project List">
+
+
+<apex:pageBlockTable value="{!data1}" var="p">
+
+<apex:column >
+
+<apex:commandLink action="{!sendid}">
+{!p.name}
+<apex:param name="id" value="{!p.id}"/>
+</apex:commandlink>
+
+</apex:column>
+</apex:pageBlockTable>
+
+
+
+
+
+</apex:pageBlock>
+
+<apex:pageBlock rendered="{!value}" title="Project Assignments">
+<apex:pageBlockTable value="{!data3}" var="p1">
+
+<apex:column headerValue="Assignment Name">
+{!p1.myassign.name}
+</apex:column>
+
+<apex:column headerValue="Contact">
+{!p1.myassign.contact__r.firstname}
+</apex:column>
+
+
+<apex:column headerValue="No of Hours Worked">
+{!p1.sum}
+</apex:column>
+
+</apex:pageBlockTable>
+
+</apex:pageBlock>
+
+
+
+
+
+</apex:form>
+
+</apex:page>

@@ -1,0 +1,20 @@
+<apex:page controller="studentcontroller">
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page {!student} <br/>
+
+<apex:outputPanel >
+  <apex:repeat value="{!studentlist}" var="data">
+  {!data} <br/>
+  
+  </apex:repeat>
+  
+  </apex:outputPanel>
+  
+  <apex:form >
+  <apex:commandButton action="{!savemethod}" value="Click me" ></apex:commandButton>
+  
+  
+  
+  </apex:form>
+</apex:page>

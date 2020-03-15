@@ -1,0 +1,5 @@
+<apex:page >
+<apex:outputText value="{!$CurrentPage.parameters.msg}">
+
+</apex:outputText>
+</apex:page>

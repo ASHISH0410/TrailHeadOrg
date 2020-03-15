@@ -1,0 +1,29 @@
+<apex:page standardController="Contact" recordSetVar="contacts"> <!-- contacts is user defined word-->
+
+ {!contact.name}
+ <apex:form >
+ <apex:pageBlock title="Contact List">
+ <apex:pageBlockTable value="{!contacts}" var="con">
+ 
+ <!--<apex:column value="{!con.FirstName}"/>-->
+ 
+ <apex:column >
+<apex:commandLink >
+{!con.FirstName}
+</apex:commandLink>
+ </apex:column>
+ 
+ </apex:pageBlockTable>
+ 
+ </apex:pageBlock>
+ <apex:pageBlock >
+ <apex:detail />
+ </apex:pageBlock>
+ <!--<apex:commandButton action="{!First}" value="First"/>-->
+ <apex:pageBlock >
+ <apex:detail />
+ </apex:pageBlock>
+ </apex:form>
+ 
+ 
+</apex:page>

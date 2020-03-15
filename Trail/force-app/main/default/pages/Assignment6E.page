@@ -1,0 +1,34 @@
+<apex:page controller="A6Econtroller" >
+ <apex:form >
+  <apex:pageBlock >
+    <apex:pageBlockSection >
+                    Contact:<apex:selectList value="{!contacts}" multiselect="false" size="1"   >
+                                  <apex:selectOptions value="{!items}" />
+                              </apex:selectList>
+<apex:commandButton value="Go" action="{!selectcontact}"/>
+                     
+                      
+    </apex:pageBlockSection>
+    
+ <!--second pageblock-->   
+ 
+ <apex:pageBlockSection rendered="{!value}">
+ <apex:pageBlockTable value="{!data}" var="d">
+ <apex:column value="{!d.name}" headerValue="Type"/>
+ 
+  <apex:column headerValue="Rating">
+ <apex:inputField value="{!d.Rating__c}"/> 
+  </apex:column>
+  
+  <apex:column value="{!d.LastModifiedDate}" headerValue="LastModifiedDate"/>
+ 
+ </apex:pageBlockTable>
+<apex:commandButton value="Save" action="{!save}"/>
+ </apex:pageBlockSection>
+    
+    </apex:pageBlock>  
+ 
+ </apex:form>
+ 
+ 
+</apex:page>

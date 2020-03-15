@@ -1,0 +1,30 @@
+<apex:page controller="AssignmentC6">
+  <apex:form >
+
+    <apex:actionFunction name="selector" action="{!change}"/>
+    <apex:pageBlock >
+    <apex:pageBlockSection >
+                    Alphabet:<apex:selectList value="{!countries}" multiselect="false" size="1" onchange="myjava()" >
+                                  <apex:selectOptions value="{!items}"  />
+                              </apex:selectList><br/>
+
+                          Fruits:<apex:selectList value="{!fruit}" multiselect="false" size="1"   >
+                                  <apex:selectOptions value="{!items1}" />
+                              </apex:selectList><br/>
+
+                                           
+    </apex:pageBlockSection>
+    
+ <!--second pageblock-->   
+    
+    </apex:pageBlock>  
+    
+    
+    </apex:form>
+    <script>
+    function myjava(){
+    selector();}
+    
+    </script>
+
+</apex:page>

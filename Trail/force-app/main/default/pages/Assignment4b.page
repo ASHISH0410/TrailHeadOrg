@@ -1,0 +1,19 @@
+<apex:page standardController="account" recordSetVar="acc" >
+<apex:form >
+
+
+<apex:pageBlock >
+<apex:datatable value="{!acc}" var="ac" columns="2">
+
+ 
+          <apex:repeat value="{!ac.contacts}" var="cont">
+          
+                        <apex:column value="{!ac.name}" />
+                <apex:column value="{!cont.name}"/>
+                
+             </apex:repeat>
+</apex:dataTable>
+</apex:pageBlock>
+
+</apex:form>
+</apex:page>

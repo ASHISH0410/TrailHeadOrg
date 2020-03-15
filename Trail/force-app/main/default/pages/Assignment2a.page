@@ -1,0 +1,25 @@
+<apex:page standardController="opportunity" recordSetVar="oppo">
+<apex:form >
+<apex:pageBlock title="Opportunities">
+
+<apex:pageBlockTable value="{!oppo}" var="opp">
+    <apex:column headerValue="Opportunity Name">
+         <apex:commandLink >
+                       {!opp.accountid}
+                         <apex:param name="cid" value="{!opp.id}"  />
+             </apex:commandLink>
+         </apex:column>
+         
+<apex:column value="{!opp.name}"/>
+<apex:column value="{!opp.amount}"/>
+<apex:column value="{!opp.closedate}"/>
+</apex:pageBlockTable>
+</apex:pageBlock>
+</apex:form>
+
+<apex:pageBlock >
+
+<apex:detail subject="{!$CurrentPage.parameters.cid}"/>
+</apex:pageBlock>
+
+</apex:page>

@@ -1,0 +1,25 @@
+<apex:page controller="mysaver">
+<apex:form >
+
+ <apex:pageBlock title="Employee Details">
+ <apex:pageBlockSection >
+   <apex:inputField value="{!Employee.id }"/><br/>
+  <apex:inputField value="{!Employee.FirstName__c}"  /><br/>
+  <apex:inputField value="{!Employee.LastName__c}"/><br/>
+  <apex:inputField value="{!Employee.Country__c}"/><br/>
+  <apex:inputField value="{!Employee.State__c}"/><br/>
+  <apex:commandButton value="back" action="{!save}"/>
+  <apex:commandButton value="save" action="{!save1}"/>
+   <apex:outputField value="{!Employee.id }"/><br/>
+  <apex:outputField value="{!Employee.FirstName__c}"  /><br/>
+  <apex:outputField value="{!Employee.LastName__c}"/><br/>
+  <apex:outputField value="{!Employee.Country__c}"/><br/>
+  <apex:outputField value="{!Employee.State__c}"/><br/>
+  
+
+ </apex:pageBlockSection>
+ </apex:pageBlock>
+
+ </apex:form>
+
+</apex:page>

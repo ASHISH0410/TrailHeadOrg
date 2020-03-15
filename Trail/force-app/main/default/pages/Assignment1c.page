@@ -1,0 +1,8 @@
+<apex:page standardController="contact" >
+<apex:form >
+FirstName:&nbsp;&nbsp;<apex:outputField value="{!contact.firstname}"/><br/>
+LastName:&nbsp;&nbsp;<apex:outputField value="{!contact.lastname}"/><br/>
+Email:&nbsp;&nbsp;<apex:outputField value="{!contact.email}"/><br/>  
+</apex:form>
+
+</apex:page>

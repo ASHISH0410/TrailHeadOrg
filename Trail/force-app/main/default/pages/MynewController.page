@@ -1,0 +1,13 @@
+<apex:page standardController="account" extensions="mynewclass">
+  <!-- Begin Default Content REMOVE THIS -->
+  {!greeting }
+  <h1>Congratulations</h1>
+  This is your new Page
+  <apex:pageBlock >
+  <apex:pageBlockSection rendered="false">
+    {!account.name}
+  </apex:pageBlockSection>
+  </apex:pageBlock>
+
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

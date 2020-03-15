@@ -1,0 +1,6 @@
+<apex:page >
+ <apex:outputLink value="/apex/SamplePage">Click here
+ <apex:param name="msg" value="success"  />
+ <apex:param name="newmsg" value="hi"  />
+ </apex:outputLink>
+</apex:page>

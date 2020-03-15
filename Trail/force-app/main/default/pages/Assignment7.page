@@ -1,0 +1,41 @@
+<apex:page controller="A7controller">
+    
+    <apex:form >
+    <apex:commandButton action="{!save}" value="Show Values"/>
+    <apex:pageBlock >
+    <apex:pageBlockSection >
+                    Countries:<apex:selectList value="{!countries}" multiselect="false" size="1"   >
+                                  <apex:selectOptions value="{!items}" />
+                              </apex:selectList><br/>
+                      Gender:<br/>
+                      <apex:selectRadio value="{!gender}"  >
+                                <apex:selectOptions value="{!items1}"/>
+                      </apex:selectRadio>
+                     Hobbies:<apex:selectList value="{!hobbies}" multiselect="false" size="1" >
+                                  <apex:selectOptions value="{!items2}"/>
+                              </apex:selectList><br/>
+                      
+    </apex:pageBlockSection>
+    
+ <!--second pageblock-->   
+    
+    </apex:pageBlock>  
+    
+    <apex:pageBlock title="Selected Values">
+    <apex:pageBlockSection >
+    <apex:outputText value="{!data}"></apex:outputText>
+
+      <!-- 
+  Selected country:<apex:outputText value="{!countries}"></apex:outputText>
+     Selected Hobby:<apex:outputText value="{!hobbies}"></apex:outputText>
+       Gender:<apex:outputText value="{!gender}"></apex:outputText>
+       -->
+    </apex:pageBlockSection>
+
+    </apex:pageBlock>
+    
+    </apex:form>
+    
+    
+    
+</apex:page>

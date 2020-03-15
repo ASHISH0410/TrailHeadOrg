@@ -1,0 +1,27 @@
+<apex:page standardController="Account"  >
+   hi  hello {!$User.FirstName}
+   <br/>
+   {!account.name}
+   <apex:form >  
+     <apex:pageBlock >
+   <apex:pageBlockSection title="ashish" collapsible="true">
+   
+                            <apex:pageBlockSectionItem >
+                                   <!--{!account.name}-->
+                                   <apex:outputField value="{!account.name}"/>
+                                   
+                            </apex:pageBlockSectionItem>
+   
+                            <apex:pageBlockSectionItem >
+                                     <!-- {!account.name}-->
+                            <apex:inputField value="{!account.name}"/> <!--you can edit this field-->
+       
+                            </apex:pageBlockSectionItem>
+   
+   </apex:pageBlockSection>
+   <apex:pageBlockButtons >
+   <apex:commandButton value="Save" action="{!Save}"/>
+   </apex:pageBlockButtons>
+   </apex:pageBlock>
+   </apex:form>
+</apex:page>

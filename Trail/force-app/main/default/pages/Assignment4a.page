@@ -1,0 +1,23 @@
+<apex:page standardController="account" extensions="pagination" recordSetVar="acc">
+<apex:form >
+
+<apex:pageBlock >
+<apex:pageBlockSection >
+
+<apex:pageBlockTable value="{!acc}" var="ac" >
+<apex:column value="{!ac.name}"/>
+<apex:column value="{!ac.type}"/>
+<apex:column value="{!ac.billingcity}"/>
+<apex:column value="{!ac.BillingState}" title="Billing State/Province"/>
+<apex:column value="{!ac.billingcountry}"/>
+</apex:pageBlockTable><br/>
+
+</apex:pageBlockSection>
+</apex:pageBlock>
+<apex:commandButton action="{!first}" value="|<" />
+<apex:commandButton action="{!Previous}" value="<" rendered="{!hasprevious}" />
+<apex:commandButton action="{!next}" value=">" rendered="{!hasnext}" />
+<apex:commandButton action="{!last}" value=">|" />
+</apex:form>
+
+</apex:page>

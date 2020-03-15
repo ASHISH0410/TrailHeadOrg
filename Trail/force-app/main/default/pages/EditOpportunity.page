@@ -1,0 +1,39 @@
+<apex:page standardcontroller="opportunity">
+
+<apex:form >
+<apex:pageBlock title="Edit Opportuniy">
+
+<apex:pageBlockSection title="Basic Information">
+<apex:inputField value="{!opportunity.name}"/><br/>
+<apex:inputField value="{!opportunity.stagename}"  >
+<apex:actionSupport event="onchange"   reRender="pgblck" status="myid"/>
+</apex:inputField>
+<apex:actionStatus id="myid" >
+starttext="{applying value..}";
+stoptext="{done}";
+</apex:actionStatus>
+<br/>
+<apex:inputField value="{!opportunity.amount}"/><br/>
+<apex:inputField value="{!opportunity.closedate}"/><br/>
+</apex:pageBlockSection>
+<!-- ="{!opportunity.stagename=='Qualification'}" --> 
+<apex:pageBlockSection title="Closed Lost Information" id="pgblck" >
+<apex:inputField value="{!opportunity.Reason_Lost__c}" rendered="{!opportunity.stagename=='Closed Lost'}"/><br/>
+</apex:pageBlockSection>
+
+</apex:pageBlock>
+
+<apex:commandButton value="Save" action="{!save}"/> 
+<apex:commandButton value="Cancel" action="{!cancel}"/>
+</apex:form>
+
+<script>
+function myjava()
+{
+
+
+}
+
+</script>
+
+</apex:page>
