@@ -5,7 +5,7 @@
     <lightning:card>
         <aura:set attribute="title">
             <lightning:icon iconName="action:new_group" size="small"/>{!v.title}
-            <p><b>Sampat Prabhudesai, Jaspreet Kaur, Ashish Gudekar, NashVille</b></p>
+            <p><b>Sampat Prabhudesai, Jaspreet Kaur, Ashish Gudekar, NashVille,Kapil</b></p>
                <p><b>Sampat Prabhudesai, Jaspreet Kaur, Ashish Gudekar</b></p>
           </aura:set>
        
